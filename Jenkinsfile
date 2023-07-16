@@ -2,9 +2,10 @@ pipeline {
    agent any
 
    stages {
-       stage('Hello_world') {
+       stage('node_exporter') {
            steps {
-               echo "Hello world"
+               ssh -i iocmigration.pem ubuntu@$IP_ADDRESS
+               sudo ls -al
            }
        }
    }
