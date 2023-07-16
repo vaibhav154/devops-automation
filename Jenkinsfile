@@ -4,8 +4,10 @@ pipeline {
    stages {
        stage('node_exporter') {
            steps {
-               ssh -i iocmigration.pem ubuntu@$IP_ADDRESS
-               sudo ls -al
+                script{
+                    ssh -i iocmigration.pem ubuntu@$IP_ADDRESS
+                    sudo ls -al
+                }
            }
        }
    }
